@@ -17,13 +17,14 @@
       <th>Actions</th>
     </tr>
     {% for task in tasks  %}
-    <tr>
+    <tr class = "rows">
       <td>{{ task.content }}</td>
       <td>{{ task.date_created.date() }}</td>
       <td>
-        <a href="/delete/{{task.id}}">Delete</a>
+        <a href="/delete/{{task.id}}" id = "delete">Delete</a>
         <br>
-	<a href="/update/{{task.id}}">Update</a>
+	<br>
+	<a href="/update/{{task.id}}" id = "update">Update</a>
       </td>
     </tr>
     {% endfor %}
@@ -33,7 +34,7 @@
   <div class="form">
     <form action="/" method="POST">
       <input name="content" type="text" id="content">
-      <input type="submit" value = 'Add Task'>
+      <input type="submit" value = 'Add Task' id = "button">
     </form>  
   </div>
 </div>
